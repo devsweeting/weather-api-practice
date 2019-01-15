@@ -2,15 +2,26 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    
-    <title>Ping Pong</title>
+
+    <title>Weather</title>
   </head>
   <body>
-    <form id="ping-pong-form">
-      <label for="goal">Enter a number:</label>
-      <input id="goal" type="number">
-      <button type="submit">Submit</button>
-    </form>
-    <ul id="solution"></ul>
+    <div class="container weather">
+      <h1>Get Weather Conditions From Anywhere!</h1>
+      <label for="location">Enter a location:</label>
+      <input id="location" type="text">
+      <button class="btn-success" id="weatherLocation">Get Current Humidity!</button>
+      <div class="errors"></div>
+      <div class="showHumidity"></div>
+      <div class="showTemp"></div>
+    </div>
+
+    <div class="container beer">
+      <h1>Get Details on a random beer!</h1>
+      <button class="btn-success" id="randomBeer">Get a random beer</button>
+      <div class="errors"></div>
+      <div class="showBeer"></div>
+      <div class="showDescription"></div>
+    </div>
   </body>
 </html>
