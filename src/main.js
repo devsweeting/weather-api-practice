@@ -42,4 +42,28 @@ $(document).ready(function() {
       }
     });
   });
+
+  $('#randomGif').click(function() {
+    let word = $("#searchword").val();
+    $.ajax({
+      url: `http://api.giphy.com/v1/gifs/search?q=${word}&api_key=31Tf1mHPfEnBTlCx7lNP3bWZhUP7X6mh&limit=10`,
+      type: 'GET',
+      data: {
+        format: 'json'
+      },
+      success: function(response) {
+        $('.showGif').html(`Your random GIF is <img src="${response.data[0].images.original.url}">`);
+        console.log(response.data[0].images.original.url)
+        console.log(response.data[0].url);
+      },
+      error: function() {
+        $('#errors').text("There was an error processing your request. Please try again.");
+      }
+    });
+  });
 });
+
+
+// http://api.giphy.com/v1/gifs/feqkVgjJpYtjy?api_key=31Tf1mHPfEnBTlCx7lNP3bWZhUP7X6mh
+
+// api.giphy.com/v1/gifs/search?q=cat&api_key=31Tf1mHPfEnBTlCx7lNP3bWZhUP7X6mh
